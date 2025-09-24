@@ -1,20 +1,16 @@
 package com.Mytestproject.loopontick;
 
 import com.Mytestproject.block.ModBlocks;
-import com.Mytestproject.testproject;
-import com.sun.jna.platform.win32.COM.TypeLibUtil;
+import com.Mytestproject.netherroofmod;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.commands.SetBlockCommand;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
@@ -22,9 +18,7 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-import static net.minecraft.commands.arguments.EntityArgument.players;
-
-@EventBusSubscriber(modid = testproject.MODID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = netherroofmod.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class ontick {
     public static List<String> alrdonechunks = new ArrayList<>(List.of(""));
 

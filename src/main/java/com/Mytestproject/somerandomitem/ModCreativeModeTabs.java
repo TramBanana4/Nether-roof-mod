@@ -1,8 +1,7 @@
 package com.Mytestproject.somerandomitem;
 
 import com.Mytestproject.block.ModBlocks;
-import com.Mytestproject.testproject;
-import cpw.mods.modlauncher.api.ITransformationService;
+import com.Mytestproject.netherroofmod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -15,7 +14,7 @@ import java.util.function.Supplier;
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, testproject.MODID);
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, netherroofmod.MODID);
 
     public static final Supplier<CreativeModeTab> BISMUTH_ITEMS_TAB =
             CREATIVE_MODE_TAB.register("bismuth_items_tab", ()-> CreativeModeTab.builder()
@@ -31,7 +30,7 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> BISMUTH_BLOCKS_TAB =
             CREATIVE_MODE_TAB.register("bismuth_blocks_tab", ()-> CreativeModeTab.builder()
-                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(testproject.MODID, "bismuth_items_tab"))
+                    .withTabsBefore(ResourceLocation.fromNamespaceAndPath(netherroofmod.MODID, "bismuth_items_tab"))
                     .icon(()-> new ItemStack(ModBlocks.BISMUTH_BLOCK.get()))
                     .title(Component.translatable("creativetab.thecooljortmadethistestproject.bismuth_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {

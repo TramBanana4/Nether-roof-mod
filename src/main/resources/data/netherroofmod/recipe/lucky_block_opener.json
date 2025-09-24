@@ -1,0 +1,22 @@
+
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+    "pattern": [
+      "A",
+      "A",
+      "S"
+    ],
+    "result": {
+      "count": 1,
+      "id": "netherroofmod:lucky_block_opener"
+  }
+  }

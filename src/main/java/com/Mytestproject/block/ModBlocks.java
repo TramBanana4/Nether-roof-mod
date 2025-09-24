@@ -1,7 +1,7 @@
 package com.Mytestproject.block;
 
 import com.Mytestproject.somerandomitem.moditems;
-import com.Mytestproject.testproject;
+import com.Mytestproject.netherroofmod;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -17,7 +17,7 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
-            DeferredRegister.createBlocks(testproject.MODID);
+            DeferredRegister.createBlocks(netherroofmod.MODID);
 
     public static final DeferredBlock<Block> BISMUTH_BLOCK = registerBlock("bismuth_block",
             ()-> new Block(BlockBehaviour.Properties.of()

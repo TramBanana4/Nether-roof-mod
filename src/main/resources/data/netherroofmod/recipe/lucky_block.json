@@ -1,0 +1,22 @@
+
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+    "pattern": [
+      "GGG",
+      "GDG",
+      "GGG"
+    ],
+    "result": {
+      "count": 1,
+      "id": "netherroofmod:lucky_block"
+  }
+  }

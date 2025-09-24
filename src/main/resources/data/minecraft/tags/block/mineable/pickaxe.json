@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "thecooljortmadethistestproject:bismuth_ore",
-    "thecooljortmadethistestproject:bismuth_deepslate_ore",
-    "thecooljortmadethistestproject:bismuth_block"
+    "netherroofmod:bismuth_ore",
+    "netherroofmod:bismuth_deepslate_ore",
+    "netherroofmod:bismuth_block"
   ]
 }
