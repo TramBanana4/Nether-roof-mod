@@ -1,7 +1,7 @@
-package com.Mytestproject.block;
+package com.justagut.NetherRoofMod.block;
 
-import com.Mytestproject.somerandomitem.moditems;
-import com.Mytestproject.netherroofmod;
+import com.justagut.NetherRoofMod.item.ModItems;
+import com.justagut.NetherRoofMod.netherroofmod;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -42,7 +42,7 @@ public class ModBlocks {
     }
 
     private static<T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
-        moditems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {

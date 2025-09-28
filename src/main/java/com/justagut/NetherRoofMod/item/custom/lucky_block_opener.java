@@ -1,6 +1,6 @@
-package com.Mytestproject.somerandomitem.custom;
+package com.justagut.NetherRoofMod.item.custom;
 
-import com.Mytestproject.block.ModBlocks;
+import com.justagut.NetherRoofMod.block.ModBlocks;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -11,8 +11,6 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-
-import java.util.Map;
 
 public class lucky_block_opener extends Item{
     public lucky_block_opener(Properties properties) {

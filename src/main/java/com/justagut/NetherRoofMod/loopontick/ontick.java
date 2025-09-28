@@ -1,7 +1,7 @@
-package com.Mytestproject.loopontick;
+package com.justagut.NetherRoofMod.loopontick;
 
-import com.Mytestproject.block.ModBlocks;
-import com.Mytestproject.netherroofmod;
+import com.justagut.NetherRoofMod.block.ModBlocks;
+import com.justagut.NetherRoofMod.netherroofmod;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
