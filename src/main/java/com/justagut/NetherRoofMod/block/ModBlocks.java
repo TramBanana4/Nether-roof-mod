@@ -32,7 +32,7 @@ public class ModBlocks {
                     .strength(6f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).explosionResistance(7f)));
     public static final DeferredBlock<Block> LUCKY_BLOCK = registerBlock("lucky_block",
             ()-> new DropExperienceBlock(UniformInt.of(16,24),  BlockBehaviour.Properties.of()
-                    .strength(1f).sound(SoundType.AMETHYST).explosionResistance(1000f)));
+                    .strength(1f).noLootTable().sound(SoundType.AMETHYST).explosionResistance(1000f)));
 
 
     private static<T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
