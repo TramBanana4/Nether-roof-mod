@@ -1,4 +1,4 @@
-package com.Mytestproject;
+package com.justagut.NetherRoofMod;
 
 import java.util.List;
 

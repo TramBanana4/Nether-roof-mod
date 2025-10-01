@@ -1,9 +1,9 @@
-package com.Mytestproject;
+package com.justagut.NetherRoofMod;
 
 //hoi
-import com.Mytestproject.block.ModBlocks;
-import com.Mytestproject.somerandomitem.ModCreativeModeTabs;
-import com.Mytestproject.somerandomitem.moditems;
+import com.justagut.NetherRoofMod.block.ModBlocks;
+import com.justagut.NetherRoofMod.item.ModCreativeModeTabs;
+import com.justagut.NetherRoofMod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -45,7 +45,7 @@ public class netherroofmod {
         ModCreativeModeTabs.register(modEventBus);
 
 
-        moditems.register(modEventBus);
+        ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
@@ -61,8 +61,8 @@ public class netherroofmod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(moditems.BISMUTH);
-            event.accept(moditems.RAW_BISMUTH);
+            event.accept(ModItems.BISMUTH);
+            event.accept(ModItems.RAW_BISMUTH);
         }
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.BISMUTH_BLOCK);
@@ -77,7 +77,7 @@ public class netherroofmod {
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @EventBusSubscriber(modid = netherroofmod.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = netherroofmod.MODID, value = Dist.CLIENT)
     static class ClientModEvents {
         @SubscribeEvent
         static void onClientSetup(FMLClientSetupEvent event) {

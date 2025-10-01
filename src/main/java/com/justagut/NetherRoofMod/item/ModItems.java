@@ -1,14 +1,14 @@
-package com.Mytestproject.somerandomitem;
+package com.justagut.NetherRoofMod.item;
 
-import com.Mytestproject.netherroofmod;
-import com.Mytestproject.somerandomitem.custom.brickifier;
-import com.Mytestproject.somerandomitem.custom.lucky_block_opener;
+import com.justagut.NetherRoofMod.netherroofmod;
+import com.justagut.NetherRoofMod.item.custom.brickifier;
+import com.justagut.NetherRoofMod.item.custom.lucky_block_opener;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class moditems {
+public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(netherroofmod.MODID);
 
     public static final DeferredItem<Item> BISMUTH = ITEMS.register

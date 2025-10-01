@@ -1,7 +1,7 @@
-package com.Mytestproject.block;
+package com.justagut.NetherRoofMod.block;
 
-import com.Mytestproject.somerandomitem.moditems;
-import com.Mytestproject.netherroofmod;
+import com.justagut.NetherRoofMod.item.ModItems;
+import com.justagut.NetherRoofMod.netherroofmod;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -32,7 +32,7 @@ public class ModBlocks {
                     .strength(6f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST).explosionResistance(7f)));
     public static final DeferredBlock<Block> LUCKY_BLOCK = registerBlock("lucky_block",
             ()-> new DropExperienceBlock(UniformInt.of(16,24),  BlockBehaviour.Properties.of()
-                    .strength(1f).sound(SoundType.AMETHYST).explosionResistance(1000f)));
+                    .strength(1f).noLootTable().sound(SoundType.AMETHYST).explosionResistance(1000f)));
 
 
     private static<T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
@@ -42,7 +42,7 @@ public class ModBlocks {
     }
 
     private static<T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
-        moditems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {
