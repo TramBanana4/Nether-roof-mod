@@ -65,7 +65,7 @@ public class netherroofmod {
             event.accept(ModItems.RAW_BISMUTH);
         }
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.BISMUTH_BLOCK);
+            event.accept(ModBlocks.GOLD_BLACKSTONE_BRICKS);
             event.accept(ModBlocks.BISMUTH_ORE);
         }
     }

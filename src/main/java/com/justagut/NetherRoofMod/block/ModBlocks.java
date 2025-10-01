@@ -19,9 +19,9 @@ public class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS =
             DeferredRegister.createBlocks(netherroofmod.MODID);
 
-    public static final DeferredBlock<Block> BISMUTH_BLOCK = registerBlock("bismuth_block",
+    public static final DeferredBlock<Block> GOLD_BLACKSTONE_BRICKS = registerBlock("gold_blackstone_bricks",
             ()-> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops().sound(SoundType.STONE).explosionResistance(3f)));
+                    .strength(3f).requiresCorrectToolForDrops().sound(SoundType.GILDED_BLACKSTONE).explosionResistance(3f)));
 
     public static final DeferredBlock<Block> BISMUTH_ORE = registerBlock("bismuth_ore",
             ()-> new DropExperienceBlock(UniformInt.of(2,4),  BlockBehaviour.Properties.of()
