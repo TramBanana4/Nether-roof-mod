@@ -25,6 +25,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RAW_BISMUTH);
                         output.accept(ModItems.BRICKIFIER);
                         output.accept(ModItems.LUCKY_BLOCK_OPENER);
+                        output.accept(ModItems.BEDROCK_GRABBER);
                     })
                     .build());
 
