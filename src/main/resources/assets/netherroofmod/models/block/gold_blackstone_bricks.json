@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "netherroofmod:block/bismuth_block"
+    "all": "netherroofmod:block/gold_blackstone_bricks"
   }
 }

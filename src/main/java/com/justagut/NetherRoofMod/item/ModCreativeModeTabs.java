@@ -19,7 +19,7 @@ public class ModCreativeModeTabs {
     public static final Supplier<CreativeModeTab> BISMUTH_ITEMS_TAB =
             CREATIVE_MODE_TAB.register("bismuth_items_tab", ()-> CreativeModeTab.builder()
                     .icon(()-> new ItemStack(ModItems.BISMUTH.get()))
-                    .title(Component.translatable("creativetab.thecooljortmadethistestproject.bismuth_items"))
+                    .title(Component.translatable("creativetab.netherroofmod.bismuth_items"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.BISMUTH);
                         output.accept(ModItems.RAW_BISMUTH);
@@ -31,10 +31,10 @@ public class ModCreativeModeTabs {
     public static final Supplier<CreativeModeTab> BISMUTH_BLOCKS_TAB =
             CREATIVE_MODE_TAB.register("bismuth_blocks_tab", ()-> CreativeModeTab.builder()
                     .withTabsBefore(ResourceLocation.fromNamespaceAndPath(netherroofmod.MODID, "bismuth_items_tab"))
-                    .icon(()-> new ItemStack(ModBlocks.BISMUTH_BLOCK.get()))
-                    .title(Component.translatable("creativetab.thecooljortmadethistestproject.bismuth_blocks"))
+                    .icon(()-> new ItemStack(ModBlocks.GOLD_BLACKSTONE_BRICKS.get()))
+                    .title(Component.translatable("creativetab.netherroofmod.bismuth_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(ModBlocks.BISMUTH_BLOCK);
+                        output.accept(ModBlocks.GOLD_BLACKSTONE_BRICKS);
                         output.accept(ModBlocks.BISMUTH_ORE);
                         output.accept(ModBlocks.BISMUTH_DEEPSLATE_ORE);
                         output.accept(ModBlocks.LUCKY_BLOCK);
