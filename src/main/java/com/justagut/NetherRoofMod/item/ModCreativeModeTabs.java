@@ -1,7 +1,7 @@
-package com.Mytestproject.somerandomitem;
+package com.justagut.NetherRoofMod.item;
 
-import com.Mytestproject.block.ModBlocks;
-import com.Mytestproject.netherroofmod;
+import com.justagut.NetherRoofMod.block.ModBlocks;
+import com.justagut.NetherRoofMod.netherroofmod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -18,13 +18,13 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> BISMUTH_ITEMS_TAB =
             CREATIVE_MODE_TAB.register("bismuth_items_tab", ()-> CreativeModeTab.builder()
-                    .icon(()-> new ItemStack(moditems.BISMUTH.get()))
+                    .icon(()-> new ItemStack(ModItems.BISMUTH.get()))
                     .title(Component.translatable("creativetab.netherroofmod.bismuth_items"))
                     .displayItems((itemDisplayParameters, output) -> {
-                        output.accept(moditems.BISMUTH);
-                        output.accept(moditems.RAW_BISMUTH);
-                        output.accept(moditems.BRICKIFIER);
-                        output.accept(moditems.LUCKY_BLOCK_OPENER);
+                        output.accept(ModItems.BISMUTH);
+                        output.accept(ModItems.RAW_BISMUTH);
+                        output.accept(ModItems.BRICKIFIER);
+                        output.accept(ModItems.LUCKY_BLOCK_OPENER);
                     })
                     .build());
 
