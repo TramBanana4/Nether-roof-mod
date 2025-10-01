@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "netherroofmod:bismuth_block"
+          "name": "netherroofmod:gold_blackstone_bricks"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "netherroofmod:blocks/bismuth_block"
+  "random_sequence": "netherroofmod:blocks/gold_blackstone_bricks"
 }
