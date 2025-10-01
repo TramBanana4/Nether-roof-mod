@@ -1,0 +1,23 @@
+
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_nugget"
+    },
+    "B": {
+      "item": "minecraft:polished_blackstone_bricks"
+    }
+  },
+
+    "pattern": [
+      "BBB",
+      "GGG",
+      "BBB"
+    ],
+    "result": {
+      "count": 6,
+      "id": "netherroofmod:gold_blackstone_bricks"
+  }
+  }
