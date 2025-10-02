@@ -41,7 +41,7 @@ public class netherroofmod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        com.Mytestproject.somerandomitem.ModCreativeModeTabs.register(modEventBus);
+        com.justagut.NetherRoofMod.item.ModCreativeModeTabs.register(modEventBus);
 
 
         ModItems.register(modEventBus);
