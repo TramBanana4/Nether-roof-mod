@@ -2,7 +2,6 @@ package com.justagut.NetherRoofMod;
 
 //hoi
 import com.justagut.NetherRoofMod.block.ModBlocks;
-import com.justagut.NetherRoofMod.item.ModCreativeModeTabs;
 import com.justagut.NetherRoofMod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -42,7 +41,7 @@ public class netherroofmod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        ModCreativeModeTabs.register(modEventBus);
+        com.Mytestproject.somerandomitem.ModCreativeModeTabs.register(modEventBus);
 
 
         ModItems.register(modEventBus);
