@@ -1,5 +1,7 @@
 package com.justagut.NetherRoofMod.item;
 
+import com.justagut.NetherRoofMod.item.custom.bedrock_grabber;
+import com.justagut.NetherRoofMod.item.custom.other_bedrock_grabber;
 import com.justagut.NetherRoofMod.netherroofmod;
 import com.justagut.NetherRoofMod.item.custom.brickifier;
 import com.justagut.NetherRoofMod.item.custom.lucky_block_opener;
@@ -21,7 +23,7 @@ public class ModItems {
             ("lucky_block_opener", ()-> new lucky_block_opener(new Item.Properties().durability(8)));
     //replace later with advanced item
     public static final DeferredItem<Item> BEDROCK_GRABBER = ITEMS.register
-            ("bedrock_grabber", ()-> new Item(new Item.Properties().durability(8)));
+            ("bedrock_grabber", ()-> new other_bedrock_grabber(new Item.Properties().durability(10)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
