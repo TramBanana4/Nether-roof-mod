@@ -17,7 +17,7 @@
           // The final path would look like 'resources/data/structure_tutorial/structure/nethrooftest.nbt'
         "location": "netherroofmod:wall2",
 
-        "processors": "minecraft:empty",
+        "processors": "netherroofmod:blackstone",
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
