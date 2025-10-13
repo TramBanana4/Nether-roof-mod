@@ -11,16 +11,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
-import java.util.Map;
-
-public class other_bedrock_grabber extends Item{
-    private static final Map<Block,Block> BRICK_MAP =
-            Map.of(
-                    Blocks.BEDROCK, Blocks.AIR,
-                    Blocks.AIR, Blocks.BEDROCK
-
-            );
-    public other_bedrock_grabber(Properties properties) {
+public class bedrock_grabber_crash extends Item{
+    public bedrock_grabber_crash(Properties properties) {
         super(properties);
     }
 
@@ -29,15 +21,18 @@ public class other_bedrock_grabber extends Item{
         Level level = context.getLevel();
         Block clickedBlock = level.getBlockState(context.getClickedPos()).getBlock();
 
-        if (!level.isClientSide()){
-            level.setBlockAndUpdate(context.getClickedPos(),BRICK_MAP.get(clickedBlock).defaultBlockState());
-            context.getItemInHand().hurtAndBreak
-                    (1,((ServerLevel) level), context.getPlayer(),
-                            item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
-            level.playSound(null,context.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
+        if (!level.isClientSide() && clickedBlock == Blocks.BEDROCK){
+            level.setBlockAndUpdate(context.getClickedPos(),Blocks.AIR.defaultBlockState());
+            } else if (!level.isClientSide() && clickedBlock ==Blocks.AIR){
+            level.setBlockAndUpdate(context.getClickedPos(),Blocks.BEDROCK.defaultBlockState());
         }
 
 
+        context.getItemInHand().hurtAndBreak
+                    (1,((ServerLevel) level), context.getPlayer(),
+                            item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+            level.playSound(null,context.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
+
         return InteractionResult.SUCCESS;
-    }
+        }
 }
