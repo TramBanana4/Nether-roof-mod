@@ -1,6 +1,7 @@
 package com.justagut.NetherRoofMod.item.custom;
 
 import com.justagut.NetherRoofMod.block.ModBlocks;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -17,16 +18,19 @@ public class bedrock_grabber extends Item{
     public bedrock_grabber(Properties properties) {
         super(properties);
     }
-
+// justagut is in deze code bezig jij kan met de other bezig
     @Override
     public InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();
         Block clickedBlock = level.getBlockState(context.getClickedPos()).getBlock();
-
+        System.out.println("checking");
         if (!level.isClientSide() && clickedBlock == Blocks.BEDROCK){
             level.setBlockAndUpdate(context.getClickedPos(),Blocks.AIR.defaultBlockState());
-            } else if (!level.isClientSide() && clickedBlock ==Blocks.AIR){
-            level.setBlockAndUpdate(context.getClickedPos(),Blocks.BEDROCK.defaultBlockState());
+            System.out.println("this block is bedrock");
+            } else if (!level.isClientSide()){
+            System.out.println("this block is not bedrock");
+            level.setBlockAndUpdate(context.getClickedPos().relative(context.getClickedFace())
+                    ,Blocks.BEDROCK.defaultBlockState());
         }
 
 
