@@ -1,6 +1,7 @@
 package com.justagut.NetherRoofMod.item.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
@@ -13,6 +14,7 @@ public class bedrock_grabber extends Item{
     public bedrock_grabber(Properties properties) {
         super(properties);
     }
+    CompoundTag count = new CompoundTag();
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
@@ -22,12 +24,13 @@ public class bedrock_grabber extends Item{
         BlockPos airpos = context.getClickedPos().relative(context.getClickedFace());
 
         if (!level.isClientSide()) {
-            if (clickedBlock == Blocks.BEDROCK) {
+            if (clickedBlock == Blocks.BEDROCK && count.getDouble("bedrock") == 0) {
                 level.setBlockAndUpdate(bedpos, Blocks.AIR.defaultBlockState());
+                count.putDouble("bedrock", 1);
             } else {
-                if (level.isEmptyBlock(airpos)) {
-                    BlockState state = Blocks.BEDROCK.defaultBlockState();
-                    level.setBlockAndUpdate(airpos, state);
+                if (level.isEmptyBlock(airpos) && count.getDouble("bedrock") == 1) {
+                    level.setBlockAndUpdate(airpos, Blocks.BEDROCK.defaultBlockState());
+                    count.putDouble("bedrock", 0);
                 }
             }
         }
