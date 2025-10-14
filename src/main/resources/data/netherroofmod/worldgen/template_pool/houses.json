@@ -1,0 +1,223 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+
+
+    //list with all houses that can spawn and how rare they are
+    //the lower the weight the rarer
+    //if one house has a weight of 10 and another with 1
+    //there wil be ten times more of the house with a weight of ten
+
+
+    {
+      "weight": 10,
+      "element": {
+        "location": "netherroofmod:anotherlanternhouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "netherroofmod:bighouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "netherroofmod:boom",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    },
+    {
+    "weight": 1,
+    "element": {
+      "location": "netherroofmod:clotheshouse",
+      "processors": "netherroofmod:blackstone",
+      "projection": "rigid",
+      "element_type": "minecraft:single_pool_element"
+    }
+    }
+  ,
+    {
+      "weight": 10,
+      "element": {
+        "location": "netherroofmod:gianthouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 10,
+      "element": {
+        "location": "netherroofmod:lanternhouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 10,
+      "element": {
+        "location": "netherroofmod:lshapehouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 10,
+      "element": {
+        "location": "netherroofmod:midpoorhouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 3,
+      "element": {
+        "location": "netherroofmod:netherwartlab",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 10,
+      "element": {
+        "location": "netherroofmod:nicebluehouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 10,
+      "element": {
+        "location": "netherroofmod:nicehouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 10,
+      "element": {
+        "location": "netherroofmod:poorhouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 1,
+      "element": {
+        "location": "netherroofmod:rarehouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 10,
+      "element": {
+        "location": "netherroofmod:redhouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 10,
+      "element": {
+        "location": "netherroofmod:simplehouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 3,
+      "element": {
+        "location": "netherroofmod:smallclotheshouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 7,
+      "element": {
+        "location": "netherroofmod:smallrichhouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 5,
+      "element": {
+        "location": "netherroofmod:smelthouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 10,
+      "element": {
+        "location": "netherroofmod:tallhouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 2,
+      "element": {
+        "location": "netherroofmod:vault",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ,
+    {
+      "weight": 10,
+      "element": {
+        "location": "netherroofmod:weirdpoorhouse",
+        "processors": "netherroofmod:blackstone",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+
+
+
+
+  ]
+}
