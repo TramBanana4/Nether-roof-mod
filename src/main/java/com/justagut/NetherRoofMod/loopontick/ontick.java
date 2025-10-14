@@ -38,6 +38,10 @@ public class ontick {
 
     @SubscribeEvent
     public static void livingDamage(LivingDamageEvent.Pre event) {
+        if (event.getSource().getDirectEntity() instanceof Player player) {
+            player.sendSystemMessage(Component.literal("au"));
+            player.sendSystemMessage(Component.literal("AU!"));
+        }
 
     }
 }
