@@ -1,5 +1,6 @@
 package com.justagut.NetherRoofMod.item.custom;
 
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
