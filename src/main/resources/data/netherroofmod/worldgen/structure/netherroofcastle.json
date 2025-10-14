@@ -51,14 +51,20 @@
         {
           "type": "minecraft:piglin",
           "weight": 5,
-          "minCount": 3,
-          "maxCount": 6
+          "minCount": 10,
+          "maxCount": 15
         },
         {
           "type": "minecraft:piglin_brute",
           "weight": 5,
-          "minCount": 3,
-          "maxCount": 6
+          "minCount": 10,
+          "maxCount": 15
+        },
+        {
+          "type": "minecraft:hoglin",
+          "weight": 5,
+          "minCount": 10,
+          "maxCount": 15
         }
       ]
     }
