@@ -2,7 +2,10 @@ package com.justagut.NetherRoofMod;
 
 //hoi
 import com.justagut.NetherRoofMod.block.ModBlocks;
+import com.justagut.NetherRoofMod.entity.ModEntities;
+import com.justagut.NetherRoofMod.entity.client.GeckoRenderer;
 import com.justagut.NetherRoofMod.item.ModItems;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -79,7 +82,10 @@ public class netherroofmod {
     @EventBusSubscriber(modid = netherroofmod.MODID, value = Dist.CLIENT)
     static class ClientModEvents {
         @SubscribeEvent
-        static void onClientSetup(FMLClientSetupEvent event) {
+        public static void onClientSetup(FMLClientSetupEvent event) {
+
+
+            EntityRenderers.register(ModEntities.GECKO.get(), GeckoRenderer::new);
         }
     }
 
