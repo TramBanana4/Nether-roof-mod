@@ -1,4 +1,4 @@
-package com.justagut.NetherRoofMod.events;
+package com.justagut.NetherRoofMod.event;
 
 
 import com.justagut.NetherRoofMod.entity.ModEntities;
