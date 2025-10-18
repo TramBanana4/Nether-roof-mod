@@ -18,12 +18,20 @@ public class MagmaHelperEntity extends Monster {
 
     public MagmaHelperEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
+        this.fireImmune();
     }
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new MeleeAttackGoal(this,1.2d,false));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
+        this.targetSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this,1f));
+
+
+    }
+    @Override
+    protected float getJumpPower() {
+        return 0.4F; // default is around 0.42F for most mobs
     }
 
     public static AttributeSupplier.Builder createAttributes() {

@@ -2,6 +2,7 @@ package com.justagut.NetherRoofMod.event;
 
 
 import com.justagut.NetherRoofMod.entity.ModEntities;
+import com.justagut.NetherRoofMod.entity.client.MagmaHelperModel;
 import com.justagut.NetherRoofMod.entity.custom.MagmaHelperEntity;
 import com.justagut.NetherRoofMod.netherroofmod;
 import net.neoforged.bus.api.SubscribeEvent;

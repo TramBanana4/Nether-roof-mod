@@ -3,7 +3,7 @@ package com.justagut.NetherRoofMod;
 //hoi
 import com.justagut.NetherRoofMod.block.ModBlocks;
 import com.justagut.NetherRoofMod.entity.ModEntities;
-import com.justagut.NetherRoofMod.entity.client.magmahelperRenderer;
+import com.justagut.NetherRoofMod.entity.client.MagmaHelperRenderer;
 import com.justagut.NetherRoofMod.item.ModItems;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -86,7 +86,7 @@ public class netherroofmod {
         public static void onClientSetup(FMLClientSetupEvent event) {
 
 
-            EntityRenderers.register(ModEntities.MAGMAHELPER.get(), magmahelperRenderer::new);
+            EntityRenderers.register(ModEntities.MAGMAHELPER.get(), MagmaHelperRenderer::new);
         }
     }
 

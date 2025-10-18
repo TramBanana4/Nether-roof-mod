@@ -16,8 +16,8 @@ public class ModEntities {
             DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, netherroofmod.MODID);
 
     public static final Supplier<EntityType<MagmaHelperEntity>> MAGMAHELPER =
-            ENTITY_TYPES.register("magmahelper", () -> EntityType.Builder.of(MagmaHelperEntity::new, MobCategory.MONSTER)
-                    .sized(0.75f, 0.35f).build("magmahelper"));
+            ENTITY_TYPES.register("magmahelper", () -> EntityType.Builder.of(MagmaHelperEntity::new,
+                    MobCategory.MONSTER).sized(0.75f, 1.2f).build("magmahelper"));
 
 
     public static void register(IEventBus eventBus) {

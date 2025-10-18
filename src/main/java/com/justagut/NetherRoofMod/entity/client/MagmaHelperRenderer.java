@@ -9,8 +9,8 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
 
-public class magmahelperRenderer extends MobRenderer<MagmaHelperEntity, MagmaHelperModel<MagmaHelperEntity>> {
-        public magmahelperRenderer(EntityRendererProvider.Context context) {
+public class MagmaHelperRenderer extends MobRenderer<MagmaHelperEntity, MagmaHelperModel<MagmaHelperEntity>> {
+        public MagmaHelperRenderer(EntityRendererProvider.Context context) {
             super(context, new MagmaHelperModel<>(context.bakeLayer(MagmaHelperModel.LAYER_LOCATION)), 0.25f);
         }
 
