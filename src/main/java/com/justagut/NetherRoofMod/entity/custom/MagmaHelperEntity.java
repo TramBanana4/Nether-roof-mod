@@ -1,9 +1,6 @@
 package com.justagut.NetherRoofMod.entity.custom;
 
 
-import com.justagut.NetherRoofMod.entity.ModEntities;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -13,16 +10,13 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.Nullable;
 
-public class GeckoEntity extends Monster {
+public class MagmaHelperEntity extends Monster {
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
-    public GeckoEntity(EntityType<? extends Monster> entityType, Level level) {
+    public MagmaHelperEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
     }
 

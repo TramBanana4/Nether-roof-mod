@@ -1,7 +1,7 @@
 package com.justagut.NetherRoofMod.entity;
 
 
-import com.justagut.NetherRoofMod.entity.custom.GeckoEntity;
+import com.justagut.NetherRoofMod.entity.custom.MagmaHelperEntity;
 import com.justagut.NetherRoofMod.netherroofmod;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
@@ -15,9 +15,9 @@ public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, netherroofmod.MODID);
 
-    public static final Supplier<EntityType<GeckoEntity>> GECKO =
-            ENTITY_TYPES.register("gecko", () -> EntityType.Builder.of(GeckoEntity::new, MobCategory.MONSTER)
-                    .sized(0.75f, 0.35f).build("gecko"));
+    public static final Supplier<EntityType<MagmaHelperEntity>> MAGMAHELPER =
+            ENTITY_TYPES.register("magmahelper", () -> EntityType.Builder.of(MagmaHelperEntity::new, MobCategory.MONSTER)
+                    .sized(0.75f, 0.35f).build("magmahelper"));
 
 
     public static void register(IEventBus eventBus) {

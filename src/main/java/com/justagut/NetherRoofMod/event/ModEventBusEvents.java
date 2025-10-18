@@ -2,8 +2,7 @@ package com.justagut.NetherRoofMod.event;
 
 
 import com.justagut.NetherRoofMod.entity.ModEntities;
-import com.justagut.NetherRoofMod.entity.client.GeckoModel;
-import com.justagut.NetherRoofMod.entity.custom.GeckoEntity;
+import com.justagut.NetherRoofMod.entity.custom.MagmaHelperEntity;
 import com.justagut.NetherRoofMod.netherroofmod;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -14,11 +13,11 @@ import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(GeckoModel.LAYER_LOCATION, GeckoModel::createBodyLayer);
+        event.registerLayerDefinition(MagmaHelperModel.LAYER_LOCATION, MagmaHelperModel::createBodyLayer);
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
-        event.put(ModEntities.GECKO.get(), GeckoEntity.createAttributes().build());
+        event.put(ModEntities.MAGMAHELPER.get(), MagmaHelperEntity.createAttributes().build());
     }
 }
