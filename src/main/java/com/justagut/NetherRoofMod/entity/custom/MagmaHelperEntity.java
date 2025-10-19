@@ -1,6 +1,7 @@
 package com.justagut.NetherRoofMod.entity.custom;
 
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -11,6 +12,8 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.PathType;
 
 public class MagmaHelperEntity extends Monster {
     public final AnimationState idleAnimationState = new AnimationState();
@@ -18,7 +21,16 @@ public class MagmaHelperEntity extends Monster {
 
     public MagmaHelperEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
+        this.xpReward = 0;
         this.fireImmune();
+    }
+    @Override
+    public boolean fireImmune() {
+        return true; // tells the renderer and logic to never ignite visually
+    }
+    @Override
+    protected void checkFallDamage(double y, boolean onGround, BlockState state, BlockPos pos) {
+        // Do nothing; skips the vanilla magma check that burns feet
     }
 
     @Override
