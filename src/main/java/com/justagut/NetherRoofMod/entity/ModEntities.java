@@ -1,6 +1,7 @@
 package com.justagut.NetherRoofMod.entity;
 
 
+import com.justagut.NetherRoofMod.entity.custom.MagmaBossEntity;
 import com.justagut.NetherRoofMod.entity.custom.MagmaHelperEntity;
 import com.justagut.NetherRoofMod.netherroofmod;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -18,6 +19,9 @@ public class ModEntities {
     public static final Supplier<EntityType<MagmaHelperEntity>> MAGMAHELPER =
             ENTITY_TYPES.register("magmahelper", () -> EntityType.Builder.of(MagmaHelperEntity::new,
                     MobCategory.MONSTER).sized(0.75f, 1.2f).build("magmahelper"));
+    public static final Supplier<EntityType<MagmaBossEntity>> MAGMABOSS =
+            ENTITY_TYPES.register("magmaboss", () -> EntityType.Builder.of(MagmaBossEntity::new,
+                    MobCategory.MONSTER).sized(0.75f, 1.2f).build("magmaboss"));
 
 
     public static void register(IEventBus eventBus) {
