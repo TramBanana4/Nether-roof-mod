@@ -40,7 +40,6 @@ public class meteorite_rain_goal<T extends Mob> extends Goal {
             ++attackcount;
             ticksUntilNextAttack = 20;
             summonmeteorite();
-
         }
     }
     public void summonmeteorite(){

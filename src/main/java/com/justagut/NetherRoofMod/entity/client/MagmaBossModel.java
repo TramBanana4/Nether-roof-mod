@@ -14,7 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class MagmaBossModel<T extends MagmaBossEntity> extends HierarchicalModel<T> {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(netherroofmod.MODID, "magmaboss"), "main");
-    private final ModelPart body;
+    public final ModelPart body;
 
     public MagmaBossModel(ModelPart root) {
         this.body = root.getChild("body");
