@@ -2,6 +2,7 @@ package com.justagut.NetherRoofMod.entity.custom;
 
 
 import com.justagut.NetherRoofMod.entity.goals.meteorite_rain_goal;
+import com.justagut.NetherRoofMod.entity.goals.summon_magmahelper_goal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AnimationState;
@@ -38,7 +39,8 @@ public class MagmaBossEntity extends Monster {
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(1, new meteorite_rain_goal(this));
+        this.goalSelector.addGoal(1, new summon_magmahelper_goal<>(this));
+        this.goalSelector.addGoal(2, new meteorite_rain_goal(this));
 
     }
     @Override
