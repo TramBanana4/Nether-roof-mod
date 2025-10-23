@@ -1,5 +1,6 @@
 package com.justagut.NetherRoofMod.entity.goals;
 
+import com.justagut.NetherRoofMod.entity.custom.MagmaBossEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -14,25 +15,39 @@ import net.minecraft.world.phys.Vec3;
 import javax.naming.Context;
 import java.util.EnumSet;
 
-public class meteorite_rain_goal<T extends Mob> extends Goal {
+public class meteorite_rain_goal<T extends Mob> extends Goal
+ {
     protected final T mob;
     private int ticksUntilNextAttack;
     private int attackcount;
-
     public meteorite_rain_goal(T mob) {
         this.mob = mob;
         this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
+
     }
 
     public boolean canUse() {
-        return Math.floor(Math.random() * 3 + 1) == 1;
-    }
+        if (this.mob instanceof MagmaBossEntity magmaboss){
+            System.out.println("meteorite   " + !magmaboss.doinggoal);
+            return !magmaboss.doinggoal;
+        }else{
+        return  false;
+    }}
     public boolean canContinueToUse(){
         return attackcount != 10;
     }
     public void start(){
         ticksUntilNextAttack = 20;
         attackcount = 0;
+        if (this.mob instanceof MagmaBossEntity magmaboss){
+            magmaboss.doinggoal(true);
+            System.out.println(magmaboss.doinggoal);
+        }
+    }
+    public void stop(){
+        if (this.mob instanceof MagmaBossEntity magmaboss){
+            magmaboss.doinggoal(false);
+        }
     }
     public void tick(){
         --ticksUntilNextAttack;
