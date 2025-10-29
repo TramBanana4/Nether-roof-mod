@@ -1,33 +1,26 @@
 package com.justagut.NetherRoofMod.entity.custom;
 
 
+import com.justagut.NetherRoofMod.entity.goals.dash_goal;
 import com.justagut.NetherRoofMod.entity.goals.meteorite_rain_goal;
 import com.justagut.NetherRoofMod.entity.goals.summon_magmahelper_goal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Fireball;
-import net.minecraft.world.entity.projectile.LargeFireball;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.EntityHitResult;
-
-import java.util.EnumSet;
 
 public class MagmaBossEntity extends Monster {
     public final AnimationState idleAnimationState = new AnimationState();
+    public final AnimationState walkAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
     public boolean doinggoal = false;
 
@@ -42,7 +35,7 @@ public class MagmaBossEntity extends Monster {
     }
     @Override
     protected void checkFallDamage(double y, boolean onGround, BlockState state, BlockPos pos) {
-        // Do nothing; skips the vanilla magma check that burns feet
+
     }
     public void doinggoal(boolean value) {
         doinggoal = value;
@@ -51,8 +44,11 @@ public class MagmaBossEntity extends Monster {
     @Override
     protected void registerGoals() {
 
-            this.goalSelector.addGoal(1, new summon_magmahelper_goal(this));
-            this.goalSelector.addGoal(2, new meteorite_rain_goal(this));
+            this.goalSelector.addGoal(1, new summon_magmahelper_goal<>(this));
+            this.goalSelector.addGoal(2, new meteorite_rain_goal<>(this));
+            this.goalSelector.addGoal(-1, new dash_goal<>(this));
+            this.targetSelector.addGoal(-2,
+                    new NearestAttackableTargetGoal<>(this, Player.class, false));
 
     }
     @Override
@@ -73,7 +69,7 @@ public class MagmaBossEntity extends Monster {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Animal.createLivingAttributes()
-                .add(Attributes.MAX_HEALTH, 30d)
+                .add(Attributes.MAX_HEALTH, 120d)
                 .add(Attributes.MOVEMENT_SPEED, 0.25D)
                 .add(Attributes.FOLLOW_RANGE, 24D)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.8D)
@@ -102,6 +98,15 @@ public class MagmaBossEntity extends Monster {
 
         if(this.level().isClientSide()) {
             this.setupAnimationStates();
+        }
+        if (getDeltaMovement().horizontalDistanceSqr() > 1.0E-6D) {
+            // start animation if not already running
+            if (walkAnimationState.isStarted()) {
+                walkAnimationState.start(tickCount);
+            }
+        } else {
+            // stop animation if the entity stops walking
+            walkAnimationState.stop();
         }
     }
 }

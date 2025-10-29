@@ -1,5 +1,6 @@
 package com.justagut.NetherRoofMod.entity.goals;
 
+import com.justagut.NetherRoofMod.entity.client.MagmaBossModel;
 import com.justagut.NetherRoofMod.entity.custom.MagmaBossEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
