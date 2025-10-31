@@ -28,7 +28,7 @@ public class dash_goal<T extends Mob> extends Goal {
 
     @Override
     public boolean canUse() {
-        return true;
+        return false;
     }
 
     @Override

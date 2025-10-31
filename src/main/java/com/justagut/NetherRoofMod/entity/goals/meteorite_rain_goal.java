@@ -18,6 +18,7 @@ import java.util.EnumSet;
 
 public class meteorite_rain_goal<T extends Mob> extends Goal
  {
+     private int maxattacks;
     protected final T mob;
     private int ticksUntilNextAttack;
     private int attackcount;
@@ -38,6 +39,7 @@ public class meteorite_rain_goal<T extends Mob> extends Goal
         return attackcount != 10;
     }
     public void start(){
+        maxattacks = (int) Math.floor(Math.random()* 6 + 5);
         ticksUntilNextAttack = 20;
         attackcount = 0;
         if (this.mob instanceof MagmaBossEntity magmaboss){
@@ -65,7 +67,7 @@ public class meteorite_rain_goal<T extends Mob> extends Goal
             @Override
             protected void onHitEntity(EntityHitResult result) {
                 super.onHitEntity(result);
-                explode(); // manually trigger explosion on entity hit
+                explode();
             }
 
             @Override
@@ -89,7 +91,7 @@ public class meteorite_rain_goal<T extends Mob> extends Goal
             }
         };
 
-        fireball.setPos(mob.getX() + Math.random() * 20 - 10, mob.getY() + 30, mob.getZ() + Math.random() * 20 - 10);
+        fireball.setPos(mob.getX() + Math.random() * 20 - 10, mob.getY() + 100, mob.getZ() + Math.random() * 20 - 10);
         fireball.setDeltaMovement(0,-1,0);
         mob.level().addFreshEntity(fireball);
     }
