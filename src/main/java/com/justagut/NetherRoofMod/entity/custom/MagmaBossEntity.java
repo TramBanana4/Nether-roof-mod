@@ -17,12 +17,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 
 public class MagmaBossEntity extends Monster {
     public final AnimationState idleAnimationState = new AnimationState();
     public final AnimationState walkAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
     public boolean doinggoal = false;
+    public int selectedgoal = 0;
 
     public MagmaBossEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
@@ -31,8 +33,9 @@ public class MagmaBossEntity extends Monster {
     }
     @Override
     public boolean fireImmune() {
-        return true; // tells the renderer and logic to never ignite visually
+        return true;
     }
+
     @Override
     protected void checkFallDamage(double y, boolean onGround, BlockState state, BlockPos pos) {
 
@@ -44,12 +47,11 @@ public class MagmaBossEntity extends Monster {
     @Override
     protected void registerGoals() {
 
-            this.goalSelector.addGoal(1, new summon_magmahelper_goal<>(this));
-            this.goalSelector.addGoal(2, new meteorite_rain_goal<>(this));
-            this.goalSelector.addGoal(-1, new dash_goal<>(this));
-            this.targetSelector.addGoal(-2,
+            this.goalSelector.addGoal(3, new summon_magmahelper_goal<>(this));
+            this.goalSelector.addGoal(4, new meteorite_rain_goal<>(this));
+            this.goalSelector.addGoal(2, new dash_goal<>(this));
+            this.targetSelector.addGoal(1,
                     new NearestAttackableTargetGoal<>(this, Player.class, false));
-
     }
     @Override
     protected float getJumpPower() {

@@ -28,13 +28,7 @@ public class summon_magmahelper_goal<T extends Mob> extends Goal {
 
     public boolean canUse() {
         if (this.mob instanceof MagmaBossEntity magmaboss){
-            int random = (int) Math.floor(Math.random() * 2 + 1);
-            boolean randomistrue = random == 1;
-            System.out.println("notdoinggoal  " +!magmaboss.doinggoal);
-            System.out.println("random  " + randomistrue);
-
-
-            return !magmaboss.doinggoal && randomistrue;
+            return !magmaboss.doinggoal /*&& randomistrue*/;
         }else{
             return  false;
         }
@@ -56,6 +50,8 @@ public class summon_magmahelper_goal<T extends Mob> extends Goal {
             magmaboss.doinggoal(false);
         }
     }
+
+
 
 
     public void tick() {
