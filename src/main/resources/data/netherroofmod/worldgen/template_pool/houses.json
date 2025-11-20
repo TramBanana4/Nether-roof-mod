@@ -187,7 +187,7 @@
     }
   ,
     {
-      "weight": 10,
+      "weight": 5,
       "element": {
         "location": "netherroofmod:tallhouse",
         "processors": "netherroofmod:blackstone",

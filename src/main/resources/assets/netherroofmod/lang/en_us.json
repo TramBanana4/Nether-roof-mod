@@ -4,11 +4,14 @@
   "item.netherroofmod.brickifier": "brickifier",
   "item.netherroofmod.lucky_block_opener": "Luckyblock Looter",
 
+  "item.netherroofmod.bedrock_grabber": "Bedrock Grabber",
+
   "block.netherroofmod.gold_blackstone_bricks": "Gold Blackstone Bricks",
   "block.netherroofmod.bismuth_ore": "Bismuth Ore",
   "block.netherroofmod.bismuth_deepslate_ore": "Deepslate Bismuth Ore",
   "block.netherroofmod.lucky_block": "Luckyblock",
 
   "creativetab.netherroofmod.bismuth_items": "Bismuth Items",
-  "creativetab.netherroofmod.bismuth_blocks": "Bismuth Blocks"
+  "creativetab.netherroofmod.bismuth_blocks": "Bismuth Blocks",
+  "entity.netherroofmod.gecko": "The Killer Beast"
 }
