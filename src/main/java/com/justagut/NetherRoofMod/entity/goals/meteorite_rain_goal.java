@@ -30,13 +30,13 @@ public class meteorite_rain_goal<T extends Mob> extends Goal
 
     public boolean canUse() {
         if (this.mob instanceof MagmaBossEntity magmaboss){
-            System.out.println("meteorite   " + !magmaboss.doinggoal);
-            return !magmaboss.doinggoal;
+            return !magmaboss.doinggoal && magmaboss.selectedgoal == 1;
         }else{
-        return  false;
-    }}
+            return  false;
+        }
+    }
     public boolean canContinueToUse(){
-        return attackcount != 10;
+        return attackcount != maxattacks;
     }
     public void start(){
         maxattacks = (int) Math.floor(Math.random()* 6 + 5);

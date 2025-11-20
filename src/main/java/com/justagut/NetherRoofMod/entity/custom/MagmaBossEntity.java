@@ -10,6 +10,8 @@ import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Monster;
@@ -25,6 +27,7 @@ public class MagmaBossEntity extends Monster {
     private int idleAnimationTimeout = 0;
     public boolean doinggoal = false;
     public int selectedgoal = 0;
+
 
     public MagmaBossEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
@@ -46,12 +49,11 @@ public class MagmaBossEntity extends Monster {
 
     @Override
     protected void registerGoals() {
-
             this.goalSelector.addGoal(3, new summon_magmahelper_goal<>(this));
             this.goalSelector.addGoal(4, new meteorite_rain_goal<>(this));
+            this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.0D, true));
             this.goalSelector.addGoal(2, new dash_goal<>(this));
-            this.targetSelector.addGoal(1,
-                    new NearestAttackableTargetGoal<>(this, Player.class, false));
+            this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, false));
     }
     @Override
     protected float getJumpPower() {
@@ -97,6 +99,12 @@ public class MagmaBossEntity extends Monster {
     @Override
     public void tick() {
         super.tick();
+        if (doinggoal){
+            selectedgoal = 0;
+        }
+        else {
+            selectedgoal = (int)Math.floor(Math.random() * 4 +1);
+        }
 
         if(this.level().isClientSide()) {
             this.setupAnimationStates();

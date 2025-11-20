@@ -28,7 +28,7 @@ public class summon_magmahelper_goal<T extends Mob> extends Goal {
 
     public boolean canUse() {
         if (this.mob instanceof MagmaBossEntity magmaboss){
-            return !magmaboss.doinggoal /*&& randomistrue*/;
+            return !magmaboss.doinggoal && magmaboss.selectedgoal == 3;
         }else{
             return  false;
         }
